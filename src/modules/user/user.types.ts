@@ -19,3 +19,24 @@ export interface RegisterUserCheck {
     password : string ,
     role : string ,
 }
+
+// Created interface for type safety , of req.body
+
+
+
+
+export interface CreateUserInDB {
+    fullname : string ,
+    email : string ,
+    password : string ,
+    role : string
+}
+
+
+
+
+// export interface ForApiResponse {
+//     statusCode : number ,                           // Use type checking only for dynamic data like user data , req.body/parmas/header/ etc.
+    // message : string ,                              // And use for DB data , not for things u know like ApiError and all that.
+//     data : object
+// }

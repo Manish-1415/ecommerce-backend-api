@@ -1,10 +1,15 @@
+
 class ApiResponse {
-    statusCode : number;
-    meassage : string;
+  statusCode: number;
+  message: string;
+  data: object;
 
-    constructor(statusCode : number )
-
-    super(statusCode : number , message : string)
-
+  // Constructor is for the properties we want to make an instance of , simply those values that we want to make properties in our
+  constructor(statusCode: number, message: string, data: object) {
     this.statusCode = statusCode;
+    this.message = message;
+    this.data = data;
+  }
 }
+
+export default ApiResponse;

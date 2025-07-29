@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import ApiError from "../../utilitys/ApiError.utility";
 
 const registerUserSchemaForValidation = z.object({
+    // We use built in library to validate , for typescript zod is best.
   fullname: z.string(),
   email: z.string().email(),
   password: z.string().min(6),
@@ -21,9 +22,8 @@ export const validateDataFromReqBody = (
   res: Response,
   next: NextFunction
 ) => {
-  const checkIfDataIsValid = registerUserSchemaForValidation.safeParse(
-    req.body
-  );
+  const checkIfDataIsValid = registerUserSchemaForValidation.safeParse(req.body);
+    // We validate request.body from zod's safeParse method.
 
   if (!checkIfDataIsValid.success) {
     const errorMsg = checkIfDataIsValid.error.issues

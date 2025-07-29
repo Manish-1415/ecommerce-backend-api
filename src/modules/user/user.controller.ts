@@ -2,6 +2,7 @@ import { Request , Response , NextFunction } from "express";
 import { RegisterUserCheck } from "./user.types";
 import UserService from "./user.service";
 import ApiError from "../../utilitys/ApiError.utility";
+import ApiResponse from "../../utilitys/ApiResponse.utility";
 
 const registerUser = async (req : Request< {} , {} , RegisterUserCheck > , res : Response , next : NextFunction) => {
     const userData= req.body;
@@ -12,11 +13,7 @@ const registerUser = async (req : Request< {} , {} , RegisterUserCheck > , res :
     
     res
     .status(201)
-    .json({
-        statusCode : 201,
-        message : "User Created Successfully",
-        data : result
-    })
+    .json(new ApiResponse(201 , "User Created Successfully !", result));
 }
 
 
