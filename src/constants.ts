@@ -1,0 +1,1 @@
+export const dbName : string = "eccomerce_api";
