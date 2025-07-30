@@ -1,9 +1,1 @@
-import { Router } from "express";
-import registerUser from "./user.controller";
-
-const router = Router();
-
-router.route("/register").post(registerUser);
-
-
-export default router;
+// New Thought unlock , i simply rush to write logic , without giving first thought to the , what data , i will needed , by this comment i will first create a schema of each collection that i needed , without code first write the structure of our DB , that we needed
